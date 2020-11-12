@@ -1,0 +1,24 @@
+
+
+To download this repository to your local computer, run the following commands:
+"""
+git clone
+cd sl-example
+"""
+
+
+To run the script as a python script in your local environment:
+"""
+pip install -r requirements.txt
+python task.py
+
+"""
+
+To run the script as a docker container, confirm that you have Docker installed and then run the following commands from the command line:
+"""
+docker build -t capture_image .
+docker run -d -e AWS_ACCESS_KEY_ID=dummy_aws_access_key_id -e AWS_SECRET_ACCESS_KEY=dummy_aws_secret_access_key -e data='{"queue_url": "dummy_queue", "src": "rtmp:/itsvideo.arlingtonva.us:8001/live/cam43.stream", "sleep": 0.5, "request_id": "dummy_request_id", "sqs_bucket": "sl-sqs-data"}' --name capture_container capture_image 
+docker stop capture_container
+"""
+
+

@@ -1,0 +1,9 @@
+loguru==0.5.3
+pysqs_extended_client==0.0.1
+numpy==1.18.4
+imutils==0.5.2
+setuptools==40.8.0
+boto3==1.13.9
+botocore==1.16.9
+opencv_python==4.2.0.34
+typing==3.7.4.3

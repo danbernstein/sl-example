@@ -1,0 +1,5 @@
+setup.py
+src/capture.egg-info/PKG-INFO
+src/capture.egg-info/SOURCES.txt
+src/capture.egg-info/dependency_links.txt
+src/capture.egg-info/top_level.txt
