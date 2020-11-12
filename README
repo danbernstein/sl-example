@@ -1,8 +1,11 @@
+This repository contains the code to capture image frames from either video ('.mp4', '.stream', .etc.) or image frame sources ('.jpg', '.png').
+
+Please note that numerous adjustments have been made to make the code easy to run outside of the AWS cloud environment that it was originally written for. Anywhere where the 'LOCAL' variable is used throughout the `task.py` script is intended to make it easier; however, all of these `LOCAL` alternatives would be removed in a fully operational data pipeline. 
 
 
 To download this repository to your local computer, run the following commands:
 """
-git clone
+git clone https://github.com/danbernstein/sl-example.git
 cd sl-example
 """
 
@@ -17,8 +20,8 @@ python task.py
 To run the script as a docker container, confirm that you have Docker installed and then run the following commands from the command line:
 """
 docker build -t capture_image .
-docker run -d -e AWS_ACCESS_KEY_ID=dummy_aws_access_key_id -e AWS_SECRET_ACCESS_KEY=dummy_aws_secret_access_key -e data='{"queue_url": "dummy_queue", "src": "rtmp:/itsvideo.arlingtonva.us:8001/live/cam43.stream", "sleep": 0.5, "request_id": "dummy_request_id", "sqs_bucket": "sl-sqs-data"}' --name capture_container capture_image 
-docker stop capture_container
+docker run -d --name capture_container capture_image 
+docker stop capture_container && docker rm capture_container
 """
 
 
