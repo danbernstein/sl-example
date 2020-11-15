@@ -15,6 +15,7 @@ To run the script as a python script in your local environment:
 
 ```
 pip install -r requirements.txt
+pip install -e .
 python task.py
 ```
 
